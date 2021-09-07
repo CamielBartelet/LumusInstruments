@@ -5,19 +5,9 @@ import WebSocket from 'ws';
 
 export default function Home() {
 
-const ws = new WebSocket("ws://localhost:8082"); //ws is fine local, for production use wss
+ //ws is fine local, for production use wss
    
-  ws.binaryType = 'arraybuffer';
-  ws.addEventListener("open", () => {
-     console.log("We are connected");
-
-     ws.send("Hey how is it going?");
-   });
-
-   ws.addEventListener("message", e => {
-     console.log(e.data)
-   });
-
+  
   return (
     <div className={styles.container}>
       <main className={styles.main}></main>
